@@ -4,6 +4,7 @@ const apikey = '768264cb';
 // siapkan komponen DOM
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
+const searchLabel = document.getElementById('search-label');
 const movieList = document.getElementById('movie-list');
 const modalBody = document.getElementById('modal-body');
 
@@ -64,7 +65,11 @@ const searchMovie = () => {
     if (this.readyState == 4 && this.status == 200) {
       const result = JSON.parse(this.responseText);
 
+      // tampilkan label pencarian
+      searchLabel.innerHTML = 'Search result for ' + searchInput.value;
       if (result.Response == 'True') {
+        // tampilkan jumlah hasil pencarian
+        searchLabel.innerHTML += ' (' + result.totalResults + ' result) : ';
 
         // tampung hasil pencarian
         const search = result.Search;
@@ -72,17 +77,17 @@ const searchMovie = () => {
           movieList.innerHTML += getMovie(data);
         });
       } else {
-        movieList.innerHTML = '<div class="col"><h2 class="text-center">' + result.Error + '</h2></div>';
+        searchLabel.innerHTML += result.Error;
       }
+
+      // reset DOM searchInput
+      searchInput.value = '';
     }
   }
 
   // kirimkan request ajax
   xhttp.open('GET', url, true);
   xhttp.send();
-
-  // reset DOM searchInput
-  searchInput.value = '';
 }
 
 // event tombol search di klik dengan ajax

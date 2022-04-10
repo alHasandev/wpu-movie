@@ -19,7 +19,7 @@ searchButton.addEventListener('click', () => {
 
 // event saat input search movie di enter
 searchInput.addEventListener('keyup', (event) => {
-  if (event.keyCode === 13) {
+  if (event.key === 'Enter') {
     // panggil fungsi searchMovie
     searchMovie();
   }

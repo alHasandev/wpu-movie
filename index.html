@@ -1,88 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+    <title>WPU Movie by Mohamad Albie with WPUNPAS</title>
+  </head>
 
-  <title>WPU Movie</title>
-</head>
-
-<body>
-
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        WPU Movie
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="#">Search Movie</a>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#"> WPU Movie </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Search Movie</a>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <div class="container">
-    <div class="row my-3 justify-content-center">
-      <div class="col-md-8">
-        <h1 class="text-center">Search Movie</h1>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" id="search-input" placeholder="Movie title">
-          <div class="input-group-append">
-            <button class="btn btn-dark" id="search-button">Search</button>
+    <div class="container">
+      <div class="row my-3 justify-content-center">
+        <div class="col-md-8">
+          <h1 class="text-center">Search Movie</h1>
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="search-input"
+              placeholder="Movie title"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-dark" id="search-button">Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row mb-3">
+        <div class="col-md-6 h4" id="search-label">
+          <!-- this will filled with javascript -->
+        </div>
+      </div>
+
+      <div class="row" id="movie-list">
+        <!-- this will filled with javascript -->
+      </div>
+    </div>
+
+    <!-- modal box -->
+    <div
+      class="modal fade"
+      id="movie-modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title">Movie Detail</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <hr>
-
-    <div class="row mb-3">
-      <div class="col-md-6 h4" id="search-label">
-        <!-- this will filled with javascript -->
-      </div>
-    </div>
-
-    <div class="row" id="movie-list">
-      <!-- this will filled with javascript -->
-    </div>
-  </div>
-
-  <!-- modal box -->
-  <div class="modal fade" id="movie-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modal-title">Movie Detail</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body" id="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Bootstrap JS -->
-  <script src="vendor/js/jquery-3.4.1.min.js"></script>
-  <script src="vendor/js/bootstrap.min.js"></script>
-  <script src="js/script.js"></script>
-</body>
-
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Bootstrap JS -->
+    <script src="assets/bootstrap/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

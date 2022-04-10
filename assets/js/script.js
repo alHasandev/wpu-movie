@@ -58,7 +58,7 @@ const searchMovie = () => {
 
   // siapkan url untuk request ke OMDB api
   const url =
-    'http://www.omdbapi.com?apikey=' + apikey + '&s=' + searchInput.value;
+    'https://www.omdbapi.com?apikey=' + apikey + '&s=' + searchInput.value;
 
   // ambil response ajax jika request ajax sukses
   xhttp.onreadystatechange = function () {
@@ -94,7 +94,7 @@ const searchMovie = () => {
 // $('#search-button').on('click', function (e) {
 
 //   $.ajax({
-//     url: 'http://www.omdbapi.com',
+//     url: 'https://www.omdbapi.com',
 //     type: "get",
 //     data: {
 //       'apikey': apikey,

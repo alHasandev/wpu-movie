@@ -33,7 +33,7 @@ movieList.addEventListener('click', (event) => {
   // siapkan properti movie
   const movie = event.target;
   const dataId = movie.getAttribute('data-id');
-  const url = 'http://www.omdbapi.com/?apikey=' + apikey + '&i=' + dataId;
+  const url = 'https://www.omdbapi.com/?apikey=' + apikey + '&i=' + dataId;
 
   // ambil response ajax jika request ajax sukses
   xhttp.onreadystatechange = function () {
@@ -44,13 +44,12 @@ movieList.addEventListener('click', (event) => {
       // tampilkan detail movie pada modal body
       modalBody.innerHTML = getModalBody(movie);
     }
-  }
+  };
 
   // kirim request ajax
   xhttp.open('GET', url, true);
   xhttp.send();
 });
-
 
 // fungsi memulai pencarian movie
 const searchMovie = () => {
@@ -58,7 +57,8 @@ const searchMovie = () => {
   movieList.innerHTML = '';
 
   // siapkan url untuk request ke OMDB api
-  const url = 'http://www.omdbapi.com?apikey=' + apikey + '&s=' + searchInput.value;
+  const url =
+    'http://www.omdbapi.com?apikey=' + apikey + '&s=' + searchInput.value;
 
   // ambil response ajax jika request ajax sukses
   xhttp.onreadystatechange = function () {
@@ -73,7 +73,7 @@ const searchMovie = () => {
 
         // tampung hasil pencarian
         const search = result.Search;
-        search.forEach(data => {
+        search.forEach((data) => {
           movieList.innerHTML += getMovie(data);
         });
       } else {
@@ -83,12 +83,12 @@ const searchMovie = () => {
       // reset DOM searchInput
       searchInput.value = '';
     }
-  }
+  };
 
   // kirimkan request ajax
   xhttp.open('GET', url, true);
   xhttp.send();
-}
+};
 
 // event tombol search di klik dengan ajax
 // $('#search-button').on('click', function (e) {
@@ -112,8 +112,6 @@ const searchMovie = () => {
 //   });
 // });
 
-
-
 // buat komponen movie
 const getMovie = (data) => {
   return `<div class="col-lg-4 col-md-6">
@@ -126,7 +124,7 @@ const getMovie = (data) => {
               </div>
             </div>
           </div>`;
-}
+};
 
 // buat konponen modal body
 const getModalBody = (data) => {
@@ -156,4 +154,4 @@ const getModalBody = (data) => {
               </div>
             </div>
           </div>`;
-}
+};
